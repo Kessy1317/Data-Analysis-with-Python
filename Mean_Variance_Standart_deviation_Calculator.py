@@ -4,15 +4,13 @@ def calculate(numbers):
     if len(numbers) != 9:
         raise ValueError("List must contain exactly 9 numbers.")
 
-    # Convert list into 3x3 numpy array
     matrix = np.array(numbers).reshape(3, 3)
 
-    # Prepare dictionary
     calculations = {
         'mean': [
-            matrix.mean(axis=0).tolist(),   # mean of columns
-            matrix.mean(axis=1).tolist(),   # mean of rows
-            matrix.mean().item()            # mean of all elements
+            matrix.mean(axis=0).tolist(),
+            matrix.mean(axis=1).tolist(),
+            matrix.mean().item()
         ],
         'variance': [
             matrix.var(axis=0).tolist(),
